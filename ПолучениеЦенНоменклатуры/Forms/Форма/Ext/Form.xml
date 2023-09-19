@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<Button name="Загрузить" id="1">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.Загрузить</CommandName>
+			<ExtendedTooltip name="ЗагрузитьРасширеннаяПодсказка" id="2"/>
+		</Button>
+		<Button name="ПолучитьЦены" id="31">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.ПолучитьЦены</CommandName>
+			<ExtendedTooltip name="ПолучитьЦеныРасширеннаяПодсказка" id="32"/>
+		</Button>
+		<InputField name="ВидЦены" id="33">
+			<DataPath>Объект.ВидЦены</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ВидЦеныКонтекстноеМеню" id="34"/>
+			<ExtendedTooltip name="ВидЦеныРасширеннаяПодсказка" id="35"/>
+			<Events>
+				<Event name="OnChange">ВидЦеныПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Table name="ТоварыExcel" id="3">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТоварыExcel</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТоварыExcelКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="ТоварыExcelКоманднаяПанель" id="5"/>
+			<ExtendedTooltip name="ТоварыExcelРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="ТоварыExcelСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>ТоварыExcel</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТоварыExcelСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="ТоварыExcelСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТоварыExcelСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>ТоварыExcel</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТоварыExcelСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="ТоварыExcelСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТоварыExcelУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>ТоварыExcel</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТоварыExcelУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="ТоварыExcelУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТоварыExcelНомерСтроки" id="16">
+					<DataPath>Объект.ТоварыExcel.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварыExcelНомерСтрокиКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ТоварыExcelНомерСтрокиРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<InputField name="ТоварыExcelАртикул" id="19">
+					<DataPath>Объект.ТоварыExcel.Артикул</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТоварыExcelАртикулКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ТоварыExcelАртикулРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="ТоварыExcelНаименование" id="22">
+					<DataPath>Объект.ТоварыExcel.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТоварыExcelНаименованиеКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ТоварыExcelНаименованиеРасширеннаяПодсказка" id="24"/>
+				</InputField>
+				<InputField name="ТоварыExcelДата" id="25">
+					<DataPath>Объект.ТоварыExcel.Дата</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТоварыExcelДатаКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ТоварыExcelДатаРасширеннаяПодсказка" id="27"/>
+				</InputField>
+				<InputField name="ТоварыExcelЦена" id="28">
+					<DataPath>Объект.ТоварыExcel.Цена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТоварыExcelЦенаКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ТоварыExcelЦенаРасширеннаяПодсказка" id="30"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ПолучениеЦенНоменклатуры</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Загрузить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Загрузить</Action>
+		</Command>
+		<Command name="ПолучитьЦены" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить цены</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить цены</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПолучитьЦены</Action>
+		</Command>
+	</Commands>
+</Form>
